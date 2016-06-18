@@ -1,0 +1,20 @@
+{
+  "name": "flow-interfaces-angular",
+  "version": "0.0.1",
+  "description": "Flow interfaces for angular 1.x",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gpittarelli-github:gpittarelli/flow-interfaces-angular.git"
+  },
+  "keywords": [
+    "flow",
+    "angular",
+    "interfaces"
+  ],
+  "author": "",
+  "license": "MIT"
+}
