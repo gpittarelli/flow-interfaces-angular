@@ -15,6 +15,27 @@ type AngularJSScope = {
   $eval(exp?: string | () => any, locals?: Object): any;
   $$phase: string;
 }
+
+type AngularJSCompileProvider = {
+  // TODO: Better typing of the definition objects
+
+  directive(name: string | Object, directiveFactory: AngularJSDirectiveFunction | Array<string | AngularJSDirectiveFunction>): AngularJSCompileProvider;
+
+  component(name: string, options: Object):  AngularJSCompileProvider;
+
+  aHrefSanitizationWhitelist(): RegExp;
+  aHrefSanitizationWhitelist(regexp: RegExp): AngularJSCompileProvider;
+
+  imgSrcSanitizationWhitelist(): RegExp;
+  imgSrcSanitizationWhitelist(regexp: RegExp): AngularJSCompileProvider;
+
+  debugInfoEnabled(): boolean;
+  debugInfoEnabled(enabled: boolean): AngularJSCompileProvider;
+
+  onChangesTtl(): number;
+  onChangesTtl(limit: number): AngularJSCompileProvider;
+}
+
 declare class AngularJSJQueryLite {
   bind(eventType: string, handler: Function): AngularJSJQueryLite;
   css(properties: Object): AngularJSJQueryLite;
