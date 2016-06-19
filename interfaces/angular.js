@@ -7,6 +7,7 @@ type AngularJSDependencyFactoryFunction = (...args: any) => any;
 
 type AngularJSIterator = (value: any, key: string | number) => void;
 
+type AngularJSTimeout = <T>(fn?: () => T, delay?: number, invokeApply?: boolean) => Promise<T>;
 
 declare class AngularJSJQueryLite {
   bind(eventType: string, handler: Function): AngularJSJQueryLite;
