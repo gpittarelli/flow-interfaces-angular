@@ -19,14 +19,18 @@ declare class AngularJSJQueryLite {
 }
 
 declare class AngularJSModule {
-  controller(name: string, dependencies: Array<AngularJSDependencyControllerFunction | string>): AngularJSModule;
+  name: string;
+  controller(name: string, dependencies: AngularJSDependencyControllerFunction | Array<AngularJSDependencyControllerFunction | string>): AngularJSModule;
+  provider(name: string, dependencies: AngularJSDependencyControllerFunction | Array<AngularJSDependencyControllerFunction | string>): AngularJSModule;
   directive(name: string, directiveFactory: Array<AngularJSDependencyDirectiveFunction | string>): AngularJSModule;
   directive(name: string, directiveFactory: Function): AngularJSModule;
   directive(name: { name: Array<AngularJSDependencyDirectiveFunction | string> }): AngularJSModule;
-  factory(name: string, providerFunction: Array<AngularJSDependencyFactoryFunction | string>): AngularJSModule;
-  factory(name: string, providerFunction: AngularJSDependencyFactoryFunction): AngularJSModule;
+  factory(name: string, providerFunction: AngularJSDependencyFactoryFunction | Array<AngularJSDependencyFactoryFunction | string>): AngularJSModule;
   value(name: string, object: any): AngularJSModule;
+  config(fn: (...deps: Array<any>) => any): AngularJSModule;
+  run(fn: (...deps: Array<any>) => any): AngularJSModule;
   constant(name: string, object: any): AngularJSModule;
+  filter(name: string, fn: (...args: Array<any>) => any): AngularJSModule;
 }
 
 type AngularJS = {
