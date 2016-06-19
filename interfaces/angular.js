@@ -9,6 +9,12 @@ type AngularJSIterator = (value: any, key: string | number) => void;
 
 type AngularJSTimeout = <T>(fn?: () => T, delay?: number, invokeApply?: boolean) => Promise<T>;
 
+type AngularJSScope = {
+  Scope(providers?: Object, instanceCache?: Object): AngularJSScope;
+  $apply(exp?: string | () => any): any;
+  $eval(exp?: string | () => any, locals?: Object): any;
+  $$phase: string;
+}
 declare class AngularJSJQueryLite {
   bind(eventType: string, handler: Function): AngularJSJQueryLite;
   css(properties: Object): AngularJSJQueryLite;
