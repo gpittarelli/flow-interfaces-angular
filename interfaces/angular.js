@@ -1,9 +1,9 @@
 /* jshint ignore: start */
 type AngularJSIterable = Object | Array<any>;
 type AngularJSStringNumber = string | number;
-type AngularJSDependencyDirectiveFunction = (...args: any) => Object;
-type AngularJSDependencyControllerFunction = (...args: any) => any;
-type AngularJSDependencyFactoryFunction = (...args: any) => any;
+type AngularJSDirectiveFunction = (...args: any) => Object;
+type AngularJSControllerFunction = (...args: any) => any;
+type AngularJSFactoryFunction = (...args: any) => any;
 
 type AngularJSIterator = (value: any, key: string | number) => void;
 
@@ -21,12 +21,12 @@ declare class AngularJSJQueryLite {
 
 declare class AngularJSModule {
   name: string;
-  controller(name: string, dependencies: AngularJSDependencyControllerFunction | Array<AngularJSDependencyControllerFunction | string>): AngularJSModule;
-  provider(name: string, dependencies: AngularJSDependencyControllerFunction | Array<AngularJSDependencyControllerFunction | string>): AngularJSModule;
-  directive(name: string, directiveFactory: Array<AngularJSDependencyDirectiveFunction | string>): AngularJSModule;
+  controller(name: string, dependencies: AngularJSControllerFunction | Array<AngularJSControllerFunction | string>): AngularJSModule;
+  provider(name: string, dependencies: AngularJSControllerFunction | Array<AngularJSControllerFunction | string>): AngularJSModule;
+  directive(name: string, directiveFactory: Array<AngularJSDirectiveFunction | string>): AngularJSModule;
   directive(name: string, directiveFactory: Function): AngularJSModule;
-  directive(name: { name: Array<AngularJSDependencyDirectiveFunction | string> }): AngularJSModule;
-  factory(name: string, providerFunction: AngularJSDependencyFactoryFunction | Array<AngularJSDependencyFactoryFunction | string>): AngularJSModule;
+  directive(name: { name: Array<AngularJSDirectiveFunction | string> }): AngularJSModule;
+  factory(name: string, providerFunction: AngularJSFactoryFunction | Array<AngularJSFactoryFunction | string>): AngularJSModule;
   value(name: string, object: any): AngularJSModule;
   config(fn: (...deps: Array<any>) => any): AngularJSModule;
   run(fn: (...deps: Array<any>) => any): AngularJSModule;
