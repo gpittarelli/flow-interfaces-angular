@@ -38,6 +38,12 @@ type AngularJS = {
   forEach(obj: AngularJSIterable, iterator: AngularJSIterator, context: Object): AngularJSIterable;
   module(name: string, dependencies: Array<string>): AngularJSModule;
   module(name: string): AngularJSModule;
-}
+  noop(...x: Array<any>): void;
+  isUndefined(x: any): boolean;
+  isDefined(x: any): boolean;
+  isArray(x: any): boolean;
+  fromJson(raw: string): Object;
+  toJson(in: Object): string;
+};
 
 declare var angular: AngularJS;
