@@ -52,6 +52,7 @@ declare class AngularJSJQueryLite {
   css(propertyName: string, value: string): AngularJSJQueryLite;
   unbind(eventType: string): AngularJSJQueryLite;
   unbind(eventType: string, handler: Function): AngularJSJQueryLite;
+  focus(): void;
 }
 
 declare class AngularJSModule {
@@ -82,6 +83,7 @@ type AngularJS = {
   isUndefined(x: any): boolean;
   isDefined(x: any): boolean;
   isArray(x: any): boolean;
+  isNumber(x: any): boolean;
   fromJson(raw: string): Object;
   toJson(in: Object): string;
 };
