@@ -36,6 +36,14 @@ type AngularJSCompileProvider = {
   onChangesTtl(limit: number): AngularJSCompileProvider;
 }
 
+type AngularJSLog = {
+  log(...args: Array<mixed>): void;
+  info(...args: Array<mixed>): void;
+  warn(...args: Array<mixed>): void;
+  error(...args: Array<mixed>): void;
+  debug(...args: Array<mixed>): void;
+}
+
 declare class AngularJSJQueryLite {
   bind(eventType: string, handler: Function): AngularJSJQueryLite;
   css(properties: Object): AngularJSJQueryLite;
