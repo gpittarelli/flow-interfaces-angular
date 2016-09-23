@@ -84,8 +84,8 @@ type AngularJS = {
   isDefined(x: any): boolean;
   isArray(x: any): boolean;
   isNumber(x: any): boolean;
-  fromJson(raw: string): Object;
-  toJson(in: Object): string;
+  fromJson(raw: string): any;
+  toJson(in: any): string;
 };
 
 declare var angular: AngularJS;
